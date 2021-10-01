@@ -22,7 +22,7 @@ public class WifiPlugin implements MethodCallHandler {
     }
 
     public static void registerWith(Registrar registrar) {
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), "plugins.ly.com/wifi");
+        final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter.codeatlas.it/wifi");
         final Context context = registrar.activeContext().getApplicationContext();
         final Activity activity = registrar.activity();
 

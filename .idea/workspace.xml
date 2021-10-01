@@ -19,20 +19,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7eacce8-361a-426b-909f-bfdff1f38e62" name="Default" comment="add signal strength">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/ly/wifi/WifiDelegate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/ly/wifi/WifiDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/it/codeatlas/flutter/wifi/WifiDelegate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/ly/wifi/WifiPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/it/codeatlas/flutter/wifi/WifiPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/it/codeatlas/flutter/wifi/WifiPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/it/codeatlas/flutter/wifi/WifiPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/java/it/codeatlas/flutter/wifi/example/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/java/it/codeatlas/flutter/wifi/example/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/WifiPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/WifiPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/wifi.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/wifi.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/wifi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/wifi.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -220,32 +223,6 @@
     <MESSAGE value="README.md update" />
     <option name="LAST_COMMIT_MESSAGE" value="README.md update" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2116" y="92" width="1536" height="1007" key="CommitChangelistDialog2" timestamp="1609075436594">
-      <screen x="1920" y="25" width="1792" height="1095" />
-    </state>
-    <state x="2116" y="92" width="1536" height="1007" key="CommitChangelistDialog2/3712.25.1920.1055/0.25.1920.1055/1920.25.1792.1095@1920.25.1792.1095" timestamp="1609075436594" />
-    <state width="1878" height="403" key="GridCell.Tab.0.bottom" timestamp="1601282498457">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state width="1878" height="403" key="GridCell.Tab.0.bottom/3712.23.1920.1057/0.23.1920.1057/1920.23.1792.1097@0.23.1920.1057" timestamp="1601282498457" />
-    <state width="1878" height="403" key="GridCell.Tab.0.center" timestamp="1601282498456">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state width="1878" height="403" key="GridCell.Tab.0.center/3712.23.1920.1057/0.23.1920.1057/1920.23.1792.1097@0.23.1920.1057" timestamp="1601282498456" />
-    <state width="1878" height="403" key="GridCell.Tab.0.left" timestamp="1601282498455">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state width="1878" height="403" key="GridCell.Tab.0.left/3712.23.1920.1057/0.23.1920.1057/1920.23.1792.1097@0.23.1920.1057" timestamp="1601282498455" />
-    <state width="1878" height="403" key="GridCell.Tab.0.right" timestamp="1601282498456">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state width="1878" height="403" key="GridCell.Tab.0.right/3712.23.1920.1057/0.23.1920.1057/1920.23.1792.1097@0.23.1920.1057" timestamp="1601282498456" />
-    <state x="461" y="190" key="SettingsEditor" timestamp="1601282188696">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state x="461" y="190" key="SettingsEditor/3712.23.1920.1057/0.23.1920.1057/1920.23.1792.1097@0.23.1920.1057" timestamp="1601282188696" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

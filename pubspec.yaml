@@ -3,15 +3,15 @@ description: Flutter plugin providing WiFi.
 homepage: https://github.com/CodeAtlas/wifi
 version: 0.2.0
 
-dependencies:
-  flutter:
-    sdk: flutter
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.5.0 <3.0.0"
 
 flutter:
   plugin:
     androidPackage: it.codeatlas.flutter.wifi
     pluginClass: WifiPlugin
 
-environment:
-  sdk: ">=2.5.0 <3.0.0"
-  flutter: ">=1.22.0 <2.0.0"
+dependencies:
+  flutter:
+    sdk: flutter

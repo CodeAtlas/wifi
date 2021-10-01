@@ -7,7 +7,7 @@
 @implementation WifiPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
     FlutterMethodChannel* channel = [FlutterMethodChannel
-                                     methodChannelWithName:@"plugins.ly.com/wifi"
+                                     methodChannelWithName:@"flutter.codeatlas.it/wifi"
                                      binaryMessenger:[registrar messenger]];
     WifiPlugin* instance = [[WifiPlugin alloc] init];
     [registrar addMethodCallDelegate:instance channel:channel];

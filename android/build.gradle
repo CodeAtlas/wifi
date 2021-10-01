@@ -1,4 +1,4 @@
-group 'com.ly.wifi'
+group 'it.codeatlas.flutter.wifi'
 version '1.0-SNAPSHOT'
 
 buildscript {

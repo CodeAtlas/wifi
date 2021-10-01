@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 enum WifiState { error, success, already }
 
 class Wifi {
-  static const MethodChannel _channel = const MethodChannel('plugins.ly.com/wifi');
+  static const MethodChannel _channel = const MethodChannel('flutter.codeatlas.it/wifi');
 
   static Future<String> get ssid async {
     return await _channel.invokeMethod('ssid');
@@ -35,7 +35,7 @@ class Wifi {
     return resultList;
   }
 
-  static Future<WifiState> connection(String ssid, [String password]) async {
+  static Future<WifiState> connection(String ssid, [String? password]) async {
     final Map<String, dynamic> params = {
       'ssid': ssid
     };
