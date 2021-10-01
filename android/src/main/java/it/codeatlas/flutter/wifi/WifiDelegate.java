@@ -1,4 +1,4 @@
-package com.ly.wifi;
+package it.codeatlas.flutter.wifi;
 
 import android.Manifest;
 import android.annotation.TargetApi;

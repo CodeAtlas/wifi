@@ -1,4 +1,4 @@
-package com.ly.wifiexample;
+package it.codeatlas.flutter.wifi.example;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
