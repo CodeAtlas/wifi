@@ -22,6 +22,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 
@@ -40,9 +41,9 @@ import io.flutter.plugin.common.PluginRegistry;
 
 public class
 WifiDelegate implements PluginRegistry.RequestPermissionsResultListener {
-    private final Activity activity;
-    private final WifiManager wifiManager;
-    private final ConnectivityManager connectivityManager;
+    private Activity activity;
+    private WifiManager wifiManager;
+    private ConnectivityManager connectivityManager;
     private final PermissionManager permissionManager;
     private static final int REQUEST_ACCESS_FINE_LOCATION_PERMISSION = 1;
     private static final int REQUEST_CHANGE_WIFI_STATE_PERMISSION = 2;
@@ -87,6 +88,20 @@ WifiDelegate implements PluginRegistry.RequestPermissionsResultListener {
         this.methodCall = methodCall;
         this.permissionManager = permissionManager;
         this.networkReceiver = new NetworkChangeReceiver();
+    }
+
+    public void dispose() {
+        activity = null;
+        wifiManager = null;
+        connectivityManager = null;
+    }
+
+    void setActivity(@Nullable Activity activity) {
+        this.activity = activity;
+    }
+
+    public boolean hasActivity() {
+        return activity != null;
     }
 
     public void getSSID(MethodCall methodCall, MethodChannel.Result result) {
