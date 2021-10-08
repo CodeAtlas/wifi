@@ -1,7 +1,7 @@
 name: wifi
 description: Flutter plugin providing WiFi.
 homepage: https://github.com/CodeAtlas/wifi
-version: 0.2.0
+version: 0.2.1
 
 environment:
   sdk: ">=2.13.0 <3.0.0"
