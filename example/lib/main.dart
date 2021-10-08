@@ -7,12 +7,51 @@ import 'package:wifi/wifi.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
+
+  static final Color _caPrimary = Color(0xFF224D47);
+  static final MaterialColor caPrimary = MaterialColor(
+    _caPrimary.value,
+    <int, Color>{
+      50: Color(0xFFE4EAE9),
+      100: Color(0xFFBDCAC8),
+      200: Color(0xFF91A6A3),
+      300: Color(0xFF64827E),
+      400: Color(0xFF436863),
+      500: _caPrimary,
+      600: Color(0xFF1E4640),
+      700: Color(0xFF193D37),
+      800: Color(0xFF14342F),
+      900: Color(0xFF0C2520),
+    },
+  );
+
+  static final Color _caSecondary = Color(0xFF26B0A0);
+  static final MaterialColor caSecondary = MaterialColor(
+    _caSecondary.value,
+    <int, Color>{
+      50: Color(0xFFE5F6F4),
+      100: Color(0xFFBEE7E3),
+      200: Color(0xFF93D8D0),
+      300: Color(0xFF67C8BD),
+      400: Color(0xFF47BCAE),
+      500: _caSecondary,
+      600: Color(0xFF22A998),
+      700: Color(0xFF1CA08E),
+      800: Color(0xFF179784),
+      900: Color(0xFF0D8773),
+    },
+  );
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Wifi',
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: caPrimary,
+        colorScheme: ColorScheme.light(
+          primary: caPrimary,
+          secondary: caSecondary,
+        ),
       ),
       home: new MyHomePage(),
     );
@@ -41,16 +80,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Wifi'),
+        title: Text('Wi-Fi'),
         centerTitle: true,
       ),
       body: SafeArea(
-        child: ListView.builder(
-          padding: EdgeInsets.all(8.0),
-          itemCount: ssidList.length + 1,
-          itemBuilder: (BuildContext context, int index) {
-            return itemSSID(index);
-          },
+        child: Scrollbar(
+          isAlwaysShown: true,
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: ssidList.length + 1,
+            itemBuilder: (BuildContext context, int index) {
+              return itemSSID(index);
+            },
+          ),
         ),
       ),
     );
@@ -58,61 +100,64 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget itemSSID(index) {
     if (index == 0) {
-      return Column(
-        children: [
-          Row(
-            children: <Widget>[
-              RaisedButton(
-                child: Text('ssid'),
-                onPressed: _getWifiName,
-              ),
-              Offstage(
-                offstage: level == 0,
-                child: Image.asset(level == 0 ? 'images/wifi1.png' : 'images/wifi$level.png', width: 28, height: 21),
-              ),
-              Text(_wifiName),
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              RaisedButton(
-                child: Text('ip'),
-                onPressed: _getIP,
-              ),
-              Text(_ip),
-            ],
-          ),
-          TextField(
-            decoration: InputDecoration(
-              border: UnderlineInputBorder(),
-              filled: true,
-              icon: Icon(Icons.wifi),
-              hintText: 'Your wifi ssid',
-              labelText: 'ssid',
+      return Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Row(
+              children: <Widget>[
+                ElevatedButton(
+                  child: Text('ssid'),
+                  onPressed: _getWifiName,
+                ),
+                Offstage(
+                  offstage: level == 0,
+                  child: Image.asset(level == 0 ? 'images/wifi1.png' : 'images/wifi$level.png', width: 28, height: 21),
+                ),
+                Text(_wifiName),
+              ],
             ),
-            keyboardType: TextInputType.text,
-            onChanged: (value) {
-              ssid = value;
-            },
-          ),
-          TextField(
-            decoration: InputDecoration(
-              border: UnderlineInputBorder(),
-              filled: true,
-              icon: Icon(Icons.lock_outline),
-              hintText: 'Your wifi password',
-              labelText: 'password',
+            Row(
+              children: <Widget>[
+                ElevatedButton(
+                  child: Text('ip'),
+                  onPressed: _getIP,
+                ),
+                Text(_ip),
+              ],
             ),
-            keyboardType: TextInputType.text,
-            onChanged: (value) {
-              password = value;
-            },
-          ),
-          RaisedButton(
-            child: Text('connection'),
-            onPressed: connection,
-          ),
-        ],
+            TextField(
+              decoration: InputDecoration(
+                border: UnderlineInputBorder(),
+                filled: true,
+                icon: Icon(Icons.wifi),
+                hintText: 'Your wifi ssid',
+                labelText: 'ssid',
+              ),
+              keyboardType: TextInputType.text,
+              onChanged: (value) {
+                ssid = value;
+              },
+            ),
+            TextField(
+              decoration: InputDecoration(
+                border: UnderlineInputBorder(),
+                filled: true,
+                icon: Icon(Icons.lock_outline),
+                hintText: 'Your wifi password',
+                labelText: 'password',
+              ),
+              keyboardType: TextInputType.text,
+              onChanged: (value) {
+                password = value;
+              },
+            ),
+            ElevatedButton(
+              child: Text('connection'),
+              onPressed: connection,
+            ),
+          ],
+        ),
       );
     } else {
       return Column(children: <Widget>[
@@ -120,10 +165,9 @@ class _MyHomePageState extends State<MyHomePage> {
           leading: Image.asset('images/wifi${ssidList[index - 1].level}.png', width: 28, height: 21),
           title: Text(
             ssidList[index - 1].ssid,
-            style: TextStyle(
-              color: Colors.black87,
-              fontSize: 16.0,
-            ),
+          ),
+          subtitle: Text(
+            ssidList[index - 1].bssid,
           ),
           dense: true,
         ),

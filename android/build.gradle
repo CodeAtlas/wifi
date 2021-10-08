@@ -1,28 +1,28 @@
-group 'com.ly.wifi'
+group 'it.codeatlas.flutter.wifi'
 version '1.0-SNAPSHOT'
 
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath 'com.android.tools.build:gradle:7.0.2'
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 16
@@ -34,5 +34,5 @@ android {
 }
 
 dependencies {
-    api 'androidx.appcompat:appcompat:1.2.0'
+    api 'androidx.appcompat:appcompat:1.3.1'
 }
