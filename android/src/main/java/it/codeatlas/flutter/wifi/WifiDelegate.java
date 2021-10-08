@@ -216,7 +216,7 @@ WifiDelegate implements PluginRegistry.RequestPermissionsResultListener {
 
     private void launchWifiList() {
         String key = methodCall.argument("key");
-        List<HashMap> list = new ArrayList<>();
+        List<HashMap<String, Object>> list = new ArrayList<>();
         if (wifiManager != null) {
             List<ScanResult> scanResultList = wifiManager.getScanResults();
             for (ScanResult scanResult : scanResultList) {
@@ -231,7 +231,7 @@ WifiDelegate implements PluginRegistry.RequestPermissionsResultListener {
                     level = 0;
                 }
                 HashMap<String, Object> maps = new HashMap<>();
-                if (key.isEmpty() || scanResult.SSID.contains(key)) {
+                if (key == null || key.isEmpty() || scanResult.SSID.contains(key)) {
                     maps.put("ssid", scanResult.SSID);
                     maps.put("level", level);
                     maps.put("bssid", scanResult.BSSID);
@@ -404,12 +404,9 @@ WifiDelegate implements PluginRegistry.RequestPermissionsResultListener {
         @Override
         public void onAvailable(@NonNull Network network) {
             if (waitNetwork) {
-                new Handler(Looper.getMainLooper()).post(new Runnable() {
-                    @Override
-                    public void run() {
-                        result.success(1);
-                        clearMethodCallAndResult();
-                    }
+                new Handler(Looper.getMainLooper()).post(() -> {
+                    result.success(1);
+                    clearMethodCallAndResult();
                 });
                 waitNetwork = false;
             }
