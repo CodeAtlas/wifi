@@ -45,7 +45,7 @@ WifiDelegate implements PluginRegistry.RequestPermissionsResultListener {
     private WifiManager wifiManager;
     private ConnectivityManager connectivityManager;
     private final PermissionManager permissionManager;
-    private static final int REQUEST_ACCESS_FINE_LOCATION_PERMISSION = 1;
+    private static final int REQUEST_ACCESS_NEARBY_WIFI_DEVICES_PERMISSION = 1;
     private static final int REQUEST_CHANGE_WIFI_STATE_PERMISSION = 2;
     final NetworkChangeReceiver networkReceiver;
     private final NetworkChangeCallback networkCallback =
@@ -207,8 +207,12 @@ WifiDelegate implements PluginRegistry.RequestPermissionsResultListener {
             finishWithAlreadyActiveError();
             return;
         }
-        if (!permissionManager.isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
-            permissionManager.askForPermission(Manifest.permission.ACCESS_FINE_LOCATION, REQUEST_ACCESS_FINE_LOCATION_PERMISSION);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                && !permissionManager.isPermissionGranted(Manifest.permission.NEARBY_WIFI_DEVICES)) {
+            permissionManager.askForPermission(Manifest.permission.NEARBY_WIFI_DEVICES, REQUEST_ACCESS_NEARBY_WIFI_DEVICES_PERMISSION);
+            return;
+        } else if (!permissionManager.isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
+            permissionManager.askForPermission(Manifest.permission.ACCESS_FINE_LOCATION, REQUEST_ACCESS_NEARBY_WIFI_DEVICES_PERMISSION);
             return;
         }
         launchWifiList();
@@ -249,7 +253,7 @@ WifiDelegate implements PluginRegistry.RequestPermissionsResultListener {
             return;
         }
         if (!permissionManager.isPermissionGranted(Manifest.permission.CHANGE_WIFI_STATE)) {
-            permissionManager.askForPermission(Manifest.permission.CHANGE_WIFI_STATE, REQUEST_ACCESS_FINE_LOCATION_PERMISSION);
+            permissionManager.askForPermission(Manifest.permission.CHANGE_WIFI_STATE, REQUEST_CHANGE_WIFI_STATE_PERMISSION);
             return;
         }
         connection();
@@ -360,7 +364,7 @@ WifiDelegate implements PluginRegistry.RequestPermissionsResultListener {
     public boolean onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         boolean permissionGranted = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
         switch (requestCode) {
-            case REQUEST_ACCESS_FINE_LOCATION_PERMISSION:
+            case REQUEST_ACCESS_NEARBY_WIFI_DEVICES_PERMISSION:
                 if (permissionGranted) {
                     launchWifiList();
                 }
